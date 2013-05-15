@@ -171,7 +171,10 @@ public class StarFoxPlayer : MonoBehaviour {
 	{
 		if (col.tag == "ChangeQuestion")
 		{
-			GameObject.Find ("EquationGenerator").GetComponent<EquationGenerator>().NextEquation(col.GetComponent<Cluster>().index);
+			if (Application.loadedLevelName == "Scene_FreeFlight")
+				GameObject.Find ("EndlessGenerator").GetComponent<EndlessGenerator>().NextEquation(col.GetComponent<Cluster>().index);
+			else
+				GameObject.Find ("EquationGenerator").GetComponent<EquationGenerator>().NextEquation(col.GetComponent<Cluster>().index);
 			
 		}
 	}

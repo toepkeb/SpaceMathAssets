@@ -447,7 +447,7 @@ public class Equation
 	
 	public Equation(Lesson lesson, int prevAnswer)
 	{
-		
+		Debug.Log (lesson);
 		this.type = lesson.type;
 		values = new int[lesson.count];
 		answer = Random.Range(lesson.min,lesson.max);

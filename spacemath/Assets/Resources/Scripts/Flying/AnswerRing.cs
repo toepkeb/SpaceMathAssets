@@ -24,8 +24,10 @@ public class AnswerRing : MonoBehaviour {
 		
 		if (col.tag == "Player")
 		{
-			
-			GameObject.Find ("EquationGenerator").GetComponent<EquationGenerator>().CheckEquationAnswer(cluster.index, val);
+			if (Application.loadedLevelName == "Scene_FreeFlight")
+				GameObject.Find ("EndlessGenerator").GetComponent<EndlessGenerator>().CheckEquationAnswer(cluster.index, val);
+			else
+				GameObject.Find ("EquationGenerator").GetComponent<EquationGenerator>().CheckEquationAnswer(cluster.index, val);
 			cluster.DestroyCluster(gameObject, index);
 		}
 
